@@ -2,12 +2,12 @@ import './style.css';
 
 export default function Track() {
   return (
-    <div class="Track">
-      <div class="Track-information">
+    <div className="Track">
+      <div className="Track-information">
         <h3></h3>
         <p></p>
       </div>
-      <button class="Track-action"></button>
+      <button className="Track-action"></button>
     </div>
   );
 }

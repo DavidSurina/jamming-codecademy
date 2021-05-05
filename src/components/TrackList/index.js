@@ -1,5 +1,5 @@
 import './style.css';
 
 export default function TrackList() {
-  return <div class="TrackList"></div>;
+  return <div className="TrackList"></div>;
 }
