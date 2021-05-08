@@ -14,7 +14,8 @@ function App() {
                         {name: "From the Inside", artist: "Linkin Park", album: "meteora", id: 5},];
 
   const [results, setResults] = useState(hardCodedResults);
-  const [playListName, setPlaylistName] = useState("Metal Workout");
+  const [playlistName, setPlaylistName] = useState("Metal Workout");
+  const [playlistTracks, setPlaylistTracks] = useState(hardCodedResults);
 
   return (
     <div>
@@ -23,7 +24,7 @@ function App() {
         <SearchBar />
         <div className="App-playlist">
           <SearchResults results={results}/>
-          <Playlist />
+          <Playlist playlistName={playlistName} playlistTracks={playlistTracks}/>
         </div>
       </div>
     </div>
