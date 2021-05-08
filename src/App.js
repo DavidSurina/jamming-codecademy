@@ -14,6 +14,7 @@ function App() {
                         {name: "From the Inside", artist: "Linkin Park", album: "meteora", id: 5},];
 
   const [results, setResults] = useState(hardCodedResults);
+  const [playListName, setPlaylistName] = useState("Metal Workout");
 
   return (
     <div>
