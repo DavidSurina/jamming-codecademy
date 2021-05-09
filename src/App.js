@@ -17,15 +17,22 @@ function App() {
   const [playlistName, setPlaylistName] = useState("Metal Workout");
   const [playlistTracks, setPlaylistTracks] = useState(hardCodedResults);
 
-  console.log(results);
-  console.log(playlistTracks);
+  const addTrack = (track) => {
+    if(playlistTracks.find(savedTrack => savedTrack.id === track.id)) {
+      //console.log("track is already in playlist");
+      return;
+    } else {
+      setPlaylistTracks(playlistTracks.push(track));
+    }
+  }
+
   return (
     <div>
       <h1>Ja<span className="highlight">mmm</span>ing</h1>
       <div className="App">
         <SearchBar />
         <div className="App-playlist">
-          <SearchResults results={results}/>
+          <SearchResults results={results} onAdd={addTrack}/>
           <Playlist playlistName={playlistName} playlistTracks={playlistTracks}/>
         </div>
       </div>
