@@ -1,8 +1,8 @@
-import TrackList from "./TrackList";
+import TrackList from "../TrackList";
 
 import "./style.css";
 
-export default function SearchResults(results) {
+export default function SearchResults({results}) {
   return (
     <div className="SearchResults">
       <h2>Results</h2>

@@ -1,8 +1,8 @@
-import TrackList from "./TrackList";
+import TrackList from "../TrackList";
 
-import './style.css';
+import "./style.css";
 
-export default function Playlist(playlistName, playlistTracks) {
+export default function Playlist({playlistName, playlistTracks}) {
   return (
     <div className="Playlist">
       <input value="New Playlist" />

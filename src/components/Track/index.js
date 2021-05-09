@@ -1,6 +1,6 @@
 import './style.css';
 
-export default function Track(trackInfo) {
+export default function Track({trackInfo}) {
   const {name, artist, album, id} = trackInfo;
 
   return (

@@ -17,6 +17,8 @@ function App() {
   const [playlistName, setPlaylistName] = useState("Metal Workout");
   const [playlistTracks, setPlaylistTracks] = useState(hardCodedResults);
 
+  console.log(results);
+  console.log(playlistTracks);
   return (
     <div>
       <h1>Ja<span className="highlight">mmm</span>ing</h1>
