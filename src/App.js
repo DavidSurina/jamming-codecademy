@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useState, useEffect} from "react";
 
 import SearchBar from "./components/SearchBar";
 import SearchResults from "./components/SearchResults";
@@ -13,16 +13,23 @@ function App() {
                         {name: "Easier to Run", artist: "Linkin Park", album: "meteora", id: 4},
                         {name: "From the Inside", artist: "Linkin Park", album: "meteora", id: 5},];
 
-  const [results, setResults] = useState(hardCodedResults);
+  const [results, setResults] = useState([]);
   const [playlistName, setPlaylistName] = useState("Metal Workout");
-  const [playlistTracks, setPlaylistTracks] = useState(hardCodedResults);
+  const [playlistTracks, setPlaylistTracks] = useState([]);
+
+  useEffect(()=> {
+    setResults(hardCodedResults);
+    setPlaylistTracks(hardCodedResults);
+  }, [])
+
 
   const addTrack = (track) => {
     if(playlistTracks.find(savedTrack => savedTrack.id === track.id)) {
-      //console.log("track is already in playlist");
+      console.log("track is already in playlist");
       return;
     } else {
-      setPlaylistTracks(playlistTracks.push(track));
+      const newPlaylist = [...playlistTracks, track];
+      setPlaylistTracks(newPlaylist);
     }
   }
 
