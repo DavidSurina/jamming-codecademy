@@ -1,6 +1,6 @@
 import './style.css';
 
-export default function Track({trackInfo, onAdd, isRemoval}) {
+export default function Track({trackInfo, onAdd, isRemoval, onRemove}) {
   const {name, artist, album, id} = trackInfo;
 
   const renderAction = () => {
@@ -15,13 +15,17 @@ export default function Track({trackInfo, onAdd, isRemoval}) {
     onAdd(trackInfo);
   };
 
+  const removeTrack = () => {
+    onRemove(trackInfo);
+  }
+
   return (
     <div className="Track" key={id}>
       <div className="Track-information">
         <h3>{name}</h3>
         <p>{`${artist} | ${album}`}</p>
       </div>
-      <button className="Track-action" onClick={addTrack}>{renderAction()}</button>
+      <button className="Track-action" onClick={isRemoval ? removeTrack : addTrack}>{renderAction()}</button>
     </div>
   );
 }
