@@ -16,6 +16,7 @@ function App() {
   const [results, setResults] = useState([]);
   const [playlistName, setPlaylistName] = useState("Metal Workout");
   const [playlistTracks, setPlaylistTracks] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(()=> {
     setResults(hardCodedResults);
@@ -46,7 +47,7 @@ function App() {
     <div>
       <h1>Ja<span className="highlight">mmm</span>ing</h1>
       <div className="App">
-        <SearchBar onSearch={search}/>
+        <SearchBar onSearch={search} searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
         <div className="App-playlist">
           <SearchResults results={results} onAdd={addTrack}/>
           <Playlist playlistName={playlistName} setPlaylistName={setPlaylistName} playlistTracks={playlistTracks} onRemove={removeTrack}/>
