@@ -1,6 +1,6 @@
 import "./style.css";
 
-export default function SearchBar() {
+export default function SearchBar({onSearch}) {
 
   return (
     <div className="SearchBar">
