@@ -41,6 +41,11 @@ function App() {
     }
   }
 
+  const savePlaylist = () => {
+    let trackUris = [];
+    return trackUris;
+  }
+
   return (
     <div>
       <h1>Ja<span className="highlight">mmm</span>ing</h1>
@@ -48,7 +53,7 @@ function App() {
         <SearchBar onSearch={search} searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
         <div className="App-playlist">
           <SearchResults results={results} onAdd={addTrack}/>
-          <Playlist playlistName={playlistName} setPlaylistName={setPlaylistName} playlistTracks={playlistTracks} onRemove={removeTrack}/>
+          <Playlist playlistName={playlistName} setPlaylistName={setPlaylistName} playlistTracks={playlistTracks} onRemove={removeTrack} onSave={savePlaylist}/>
         </div>
       </div>
     </div>
