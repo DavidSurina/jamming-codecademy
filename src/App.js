@@ -3,6 +3,7 @@ import {useState, useEffect} from "react";
 import SearchBar from "./components/SearchBar";
 import SearchResults from "./components/SearchResults";
 import Playlist from "./components/Playlist";
+import Spotify from "./util/spotify";
 
 import './App.css';
 
@@ -17,12 +18,6 @@ function App() {
   const [playlistName, setPlaylistName] = useState("Metal Workout");
   const [playlistTracks, setPlaylistTracks] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
-
-  useEffect(()=> {
-    setResults(hardCodedResults);
-    setPlaylistTracks(hardCodedResults);
-  }, [])
-
 
   const addTrack = (track) => {
     if(playlistTracks.find(savedTrack => savedTrack.id === track.id)) {
@@ -40,7 +35,10 @@ function App() {
   }
 
   const search = (term) => {
-    console.log(term);
+    let searchResult = Spotify.search(term);
+    if(searchResult) {
+      console.log(searchResult);
+    }
   }
 
   return (

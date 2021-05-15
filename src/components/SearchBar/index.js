@@ -6,6 +6,7 @@ export default function SearchBar({ onSearch, searchTerm, setSearchTerm }) {
       <input
         placeholder="Enter A Song, Album, or Artist"
         onChange={(e) => {
+          e.preventDefault();
           setSearchTerm(e.target.value);
         }}
       />
