@@ -36,8 +36,8 @@ const Spotify = {
         headers: { Authorization: `Bearer ${accessToken}` },
       });
       if (response) {
-          console.log(response);
-          return response;
+          console.log(response.data.tracks.items);
+          return response.data.tracks.items;
       }
     } catch (err) {
       console.error(err);

@@ -36,9 +36,9 @@ function App() {
 
   const search = (term) => {
     let searchResult = Spotify.search(term);
-    if(searchResult) {
-      console.log(searchResult);
-    }
+    searchResult.then((result) => {
+      console.log(result)
+    })
   }
 
   const savePlaylist = () => {
