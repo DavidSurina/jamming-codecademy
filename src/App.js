@@ -37,7 +37,8 @@ function App() {
   const search = (term) => {
     let searchResult = Spotify.search(term);
     searchResult.then((result) => {
-      console.log(result)
+      //console.log(result)
+      setResults(result);
     })
   }
 
