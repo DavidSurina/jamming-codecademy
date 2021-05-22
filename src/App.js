@@ -44,6 +44,9 @@ function App() {
 
   const savePlaylist = () => {
     let trackUris = [];
+    Spotify.savePlaylist(playlistName, playlistTracks);
+
+
     return trackUris;
   }
 
