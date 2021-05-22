@@ -43,6 +43,22 @@ const Spotify = {
       console.error(err);
     }
   },
+
+  savePlaylist: async(playlistName,tracks) => {
+    if(playlistName && tracks) {
+      accessToken = Spotify.getAccessToken();
+      const playlistsEndpoint = 'https://api.spotify.com/v1/me/playlists';
+      const userNameEndpoint = 'https://api.spotify.com/v1/me';
+      const userName = await axios.get(userNameEndpoint, {
+        headers: { Authorization: `Bearer ${accessToken}` },
+      });
+      if(userName) {
+        console.log(userName.data.id);
+      }
+    } else {
+      return;
+    }
+  }
 };
 
 export default Spotify;
